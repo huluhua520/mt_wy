@@ -1,23 +1,344 @@
-#电视盒
 
-#### 介绍
-西瓜TV永久发布页
 
-#### 软件架构
- * 本APP注册代理分成为50%，就是有一个会员从你这里注册，然后登陆APP， < 元素元素 >
-开通视频会员你可以拿到对方付款的50%！自己无需开通会员都可以有分成。。。
- < 李  等级 = "C_蓝色C_链接" > 博卢罗夫 < A  高参考值 = "https://share.feijipan.com/s/NUUWKeen"  目标 = "_blank" > 请点击这里下载 </ A > </ 李 > < 元素元素 >
-#### 菠萝影视截图
- < 信息组   SRC = "https://api.49hk.top/assets/images/0.png"  宽度 = "100%"  原始数据 = "https://api.49hk.top/assets/images/0.png" >
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>惠泽论坛-地址发布页，收藏我回家不迷路！</title>
+    <meta name="description" content="UAA-地址发布页，收藏我回家不迷路！">
 
-#### 安装教程
-  < 李  等级 = "C_蓝色C_链接" > 西瓜TV飞机盘下载： < A  高参考值 = "https://share.feijipan.com/s/NUUWKeen"  目标 = "_blank" > 请点击这里下载《推荐》 </ A > </ 李 > < 元素元素 >
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --secondary-color: #60a5fa;
+            --text-color: #1f2937;
+            --card-background: rgba(255, 255, 255, 0.9);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(-45deg, #e6f2ff, #fff0f5, #f0f7ff, #fff5e6);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            overflow-x: hidden;
+            font-size: 16px; /* 恢复到之前的基础字体大小 */
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .wrapper {
+            padding: 1rem;
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+        }
+        .main {
+            background-color: var(--card-background);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+        .main:hover {
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        ul {
+            list-style-type: none;
+            margin-bottom: 1.5rem;
+        }
+        li {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background-color: rgba(248, 250, 252, 0.8);
+            border-radius: 10px;
+            transition: var(--transition);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        li a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+        li a:hover {
+            color: var(--secondary-color);
+        }
+        li a i {
+            margin-right: 0.5rem;
+            font-size: 1.2em;
+        }
+        .notice {
+            background-color: rgba(230, 242, 255, 0.8);
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+        .notice:hover {
+            background-color: rgba(230, 242, 255, 1);
+        }
+        .footer {
+            margin-top: 2rem;
+            text-align: center;
+            color: var(--text-color);
+            font-weight: 300;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+        .footer:hover {
+            opacity: 1;
+        }
+        .bookmark-btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .bookmark-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .bookmark-btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+        .bookmark-btn:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+        @keyframes ripple {
+            0% { transform: scale(0, 0); opacity: 1; }
+            20% { transform: scale(25, 25); opacity: 1; }
+            100% { opacity: 0; transform: scale(40, 40); }
+        }
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .bg-animation span {
+            position: absolute;
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            animation: move 25s infinite linear;
+        }
+        .bg-animation span:nth-child(1) { top: 20%; left: 20%; animation-duration: 15s; }
+        .bg-animation span:nth-child(2) { top: 60%; left: 80%; animation-duration: 17s; width: 40px; height: 40px; }
+        .bg-animation span:nth-child(3) { top: 40%; left: 40%; animation-duration: 19s; }
+        .bg-animation span:nth-child(4) { top: 80%; left: 10%; animation-duration: 21s; }
+        @keyframes move {
+            0% { transform: translateX(0) translateY(0) rotate(0); opacity: 1; border-radius: 0; }
+            100% { transform: translateX(-1000px) translateY(-1000px) rotate(720deg); opacity: 0; border-radius: 50%; }
+        }
+        @media (max-width: 768px) {
+            body {
+                font-size: calc (14px + 0.390625vw); /* 在移动设备上使用响应式字体大小 */
+            }
+            .main {
+                padding: 1rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+         .status-badge {
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            margin-left: 10px;
+        }
+        .status-normal {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .status-error {
+            background-color: #f44336;
+            color: white;
+        }
+        li.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        li.disabled a {
+            pointer-events: none;
+        }
+              .icon_ios_shared{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAuGAAALhgBKqonIAAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNAay06AAAAHsSURBVGiB7ZvLasJAFEBvnsYXhFoKXaRLi/QHWrppl/2mrvtL3dZlf0AElxXsRiVgo+bdTVJEUmUmyYTc3ANCTGbuneMMmTEPKY5jaBJy1Q0QTeOEVZbCN6+z3Akt05A3bjhVZGmxcrznvPG+3oZM5YX2cCpr7/zhyvGeBl39Q2R+AIHClmmoqWy678cNHi3TYBpleREinMhODmUBANwg0jZuOLFMQ9gPX3qiLNmWKvvptr3zhxs3nIqSLjVJlqzZ1mZXPb1ntrW/M6BI6dIS/Cfbbymjub33+i3lrgrpUoKfkY0AAOb2PqhCuvDAydRzUjYlS1qRpcVxuSIpXHhu7yNFlr7T7xmy8cEnlR6ZbW026OrjIhYjpyhlDkwWFeMwiq+zevaY5PhtGW05prRJf+V4TwAA9s4/U1IsjfvzQMLYIWHskDB2WOdhlkucEmNsITlq3cMdXXFY69RaeOuFHdY63EvLi472eer4esu3pDwXN4l9zxUccgivt/4Db90C4nLfLqn1kOaBhLFDwtghYeyQMHZIGDskjB0Sxg4JY4eEsSP0obAE3uvVhdC4HiZh7JAwdhonzD0tXXb19yIbwsLS8bjrcgsvHe+FO2uFMA3plir7h8861xGmHnaDSE82a/uyk0QvaiGnccK/XaTidYL+GAMAAAAASUVORK5CYII=)}
+      .icon_android_share{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAuGAAALhgBKqonIAAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNAay06AAAAFYSURBVGiB7doxSgNBFMbxt5PZrGFWCMHCgAg2Fp7CUj1DbmBhZ2Ntk87CC3gIsfQWgo0gFoJRAm4YN7uZsTDKGtLOG3j7/cpt3v4TAl+RxHtPbaJivwA3BEuHYOkQLB2CpUOwdAiWrnXBmuPI7sUjDY0Zfc7nV0VVDbRSvp9ldxNrT54v9zle4Q/LN7yT53tv1t4UVTUgIqqdSybWHm/1ercc95tYgr8Wi+vauWT1+bQsjzjuN0X9Da/7EEJjCdZK3a97nqfpB8f9Jpbg19ls3M+yh+YzrZTf7HbPOO7/u8t1aFqWB9vGnNfOHRIRbXQ6py9F8cR1/xdbMNHPN01EY86bq1o3PBAsHYJDGRozytP0nYi8VsrFmJVE2NJhYEsvYUszwJYOBVs6EgwP6RAsHbZ0CNjSS9jSDLClQ8CWpnhbOsG/aYVDsHQIlg7B0iFYOgRLh2DpvgEr5a2EBqrivQAAAABJRU5ErkJggg==)}
+            .icon{width:20px;height:20px;background-position:center;background-size:contain;background-repeat:no-repeat;display:inline-block}
 
- < 李  等级 = "C_蓝色C_链接" > 西瓜TV蓝奏下载密码1234： < A  高参考值 = "https://qq180.lanzoum.com/b0397o53c"  目标 = "_blank" > 请点击这里下载 </ A > </ 李 > < 元素元素 >
-#### 西瓜TV截图
- < 信息组   SRC = "https://api.49hk.top/assets/images/xgtv.png"  宽度 = "100%"  原始数据 = "https://api.49hk.top/assets/images/0.png" >
-#### 手机影院截图
- < 信息组   SRC = "https://api.49hk.top/assets/images/xgsj.png"  宽度 = "100%"  原始数据 = "https://api.49hk.top/assets/images/0.png" >
+      .text-white{color: #fff;}
+    </style>
+</head>
+<body>
 
-#### 参与贡献
+       <div class="bg-animation">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+   <div class="wrapper">
+        <main class="main">
+            <h1>惠泽论坛地址发布页 </h1>
+            <button class="bookmark-btn">
+                <i class="fas fa-bookmark"></i> Ctrl+D 收藏本页到浏览器收藏夹
+            </button>
+            <ul id="url-list">
+            
+                <li data-url="https://bbs.xgvv.top/api.php">
+                    <span>主论坛</span>
+                    <a href="https://bbs.xgvv.top" target="_blank">
+                        bbs.xgvv.top
+                    </a>
+                    <span class="status-badge"></span>
+                </li>
+      <!--以下无限复制     -->          
+                <li data-url="https://bbs.xgaa.top/api.php">
+                    <span>刘伯温坛</span>
+                    <a href="https://bbs.xgaa.top" target="_blank">
+                       bbs.xgaa.top
+                    </a>
+                    <span class="status-badge"></span>
+                </li>
+                
+                <li data-url="https://www.xgvv.top/api.php">
+                    <span>凤凰神算</span>
+                    <a href="https://www.xgvv.top" target="_blank">
+                        www.xgvv.top
+                    </a>
+                    <span class="status-badge"></span>
+                </li>
+                
+                <li data-url="https://www.49hk.top/api.php">
+                    <span>金多宝坛</span>
+                    <a href="https://www.49hk.top" target="_blank">
+                        www.49hk.top
+                    </a>
+                    <span class="status-badge"></span>
+                </li>
+                
+                <li data-url="https://www.xgaa.top/api.php">
+                    <span>济公论坛</span>
+                    <a href="https://www.xgaa.top" target="_blank">
+                        www.xgaa.top
+                    </a>
+                    <span class="status-badge"></span>
+                </li>
+                
+                <li data-url="https://dh.xgvv.top/api.php">
+                    <span>凤凰论坛</span>
+                    <a href="https://dh.xgvv.top" target="_blank">
+                        dh.xgvv.top
+                    </a>
+                    <span class="status-badge"></span>
+                </li>
 
+
+                
+       <!--以上无限复制     -->     
+            </ul>
+      <div class="field ">
+        <h4 class="title">为了防丢失</h4>
+        <ul>
+          <p>请把本页存为书签</p>
+        </ul>
+        <ul>
+          <p>如果你觉得不错，请分享给自己的朋友</p>
+        </ul>
+      </div>
+      <div class="field desc">
+        <h4 class="title">✐ 溫馨提示</h4>
+        <ul>
+          <p>* 推荐使用X浏览器访问本站，S浏览器速度更快，iPhone建议使用手机自带Safria浏览器访问。</p>
+          <p>* 如果您记不住本站域名，请收藏该页地址，收藏并分享给好朋友。</p>
+          <p class="c_black">1、使用电脑的用户，请按键盘上的CTRL+D进行收藏</p>
+          <p class="c_black">2、苹果手机用户在浏览器点击<span class="icon icon_ios_shared small-img"></span>，然后添加到个人收藏或主屏幕。</p>
+          <p class="c_black">3、安卓手机用户点击<span class="icon icon_android_share small-img"></span>，或者打开浏览器设置，添加到书签或主屏幕。</p>
+        </ul>
+      </div>
+        </main>
+    </div><style>
+.wechat-img-wrapper {
+    position: fixed;
+    z-index: 99;
+    background-color: transparent;
+    right: 20px;
+    top: 80%;
+    animation: ani 1s linear infinite;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.wechat-img {
+    width: 50px;
+    height: 50px;
+}
+</style>
+<div class="wechat-img-wrapper weixinCopy Plugin_float_weixin">
+<a target="_blank" href="https://share.feijipan.com/s/dhDZkhfG">
+    <img class="wechat-img" src="https://bbs.xgaa.top/static/images/app.png" alt="下载APP"></a>
+	</div>    
+	<script>
+ var _0xodb='jsjiami.com.v7';if(function(_0x49a9ff,_0x39ec29,_0x1c2bdd,_0x21765c,_0x20443f,_0x349d53,_0x59bc25){return _0x49a9ff=_0x49a9ff>>0x4,_0x349d53='hs',_0x59bc25='hs',function(_0x59864e,_0x43887a,_0x140572,_0x20ae8d,_0x50fc54){const _0xf022af=_0x15b3;_0x20ae8d='tfi',_0x349d53=_0x20ae8d+_0x349d53,_0x50fc54='up',_0x59bc25+=_0x50fc54,_0x349d53=_0x140572(_0x349d53),_0x59bc25=_0x140572(_0x59bc25),_0x140572=0x0;const _0x499bac=_0x59864e();while(!![]&&--_0x21765c+_0x43887a){try{_0x20ae8d=-parseInt(_0xf022af(0x101,'eYI('))/0x1*(parseInt(_0xf022af(0xff,'TmO5'))/0x2)+-parseInt(_0xf022af(0x115,'HDl^'))/0x3+-parseInt(_0xf022af(0x107,'XrRg'))/0x4*(parseInt(_0xf022af(0x12a,'*sYG'))/0x5)+parseInt(_0xf022af(0x105,'RZM['))/0x6*(-parseInt(_0xf022af(0x13d,'ijN!'))/0x7)+-parseInt(_0xf022af(0x11e,')A5p'))/0x8+-parseInt(_0xf022af(0x12f,'HDl^'))/0x9+parseInt(_0xf022af(0x102,'!5ta'))/0xa;}catch(_0x1003f1){_0x20ae8d=_0x140572;}finally{_0x50fc54=_0x499bac[_0x349d53]();if(_0x49a9ff<=_0x21765c)_0x140572?_0x20443f?_0x20ae8d=_0x50fc54:_0x20443f=_0x50fc54:_0x140572=_0x50fc54;else{if(_0x140572==_0x20443f['replace'](/[KpwNxETHrSOeGLuXRqBJ=]/g,'')){if(_0x20ae8d===_0x43887a){_0x499bac['un'+_0x349d53](_0x50fc54);break;}_0x499bac[_0x59bc25](_0x50fc54);}}}}}(_0x1c2bdd,_0x39ec29,function(_0x86cbfa,_0x29442d,_0x4ab82c,_0x270e3a,_0x5efb02,_0x110396,_0x1a661a){return _0x29442d='\x73\x70\x6c\x69\x74',_0x86cbfa=arguments[0x0],_0x86cbfa=_0x86cbfa[_0x29442d](''),_0x4ab82c='\x72\x65\x76\x65\x72\x73\x65',_0x86cbfa=_0x86cbfa[_0x4ab82c]('\x76'),_0x270e3a='\x6a\x6f\x69\x6e',(0x18c646,_0x86cbfa[_0x270e3a](''));});}(0xbe0,0xcfc91,_0x8d35,0xc0),_0x8d35){}function _0x15b3(_0x459683,_0x8a1426){const _0x8d35fd=_0x8d35();return _0x15b3=function(_0x15b383,_0xbd12db){_0x15b383=_0x15b383-0xf7;let _0x1c919a=_0x8d35fd[_0x15b383];if(_0x15b3['AnbjAr']===undefined){var _0x13ebf3=function(_0xb35c4b){const _0x5de567='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x190af3='',_0x7c687b='';for(let _0x1ef623=0x0,_0x2d5c15,_0x5c4ba3,_0x2359c0=0x0;_0x5c4ba3=_0xb35c4b['charAt'](_0x2359c0++);~_0x5c4ba3&&(_0x2d5c15=_0x1ef623%0x4?_0x2d5c15*0x40+_0x5c4ba3:_0x5c4ba3,_0x1ef623++%0x4)?_0x190af3+=String['fromCharCode'](0xff&_0x2d5c15>>(-0x2*_0x1ef623&0x6)):0x0){_0x5c4ba3=_0x5de567['indexOf'](_0x5c4ba3);}for(let _0x28b4e1=0x0,_0x3db8cb=_0x190af3['length'];_0x28b4e1<_0x3db8cb;_0x28b4e1++){_0x7c687b+='%'+('00'+_0x190af3['charCodeAt'](_0x28b4e1)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x7c687b);};const _0x303b7f=function(_0x2da1c1,_0x4d321c){let _0x499b88=[],_0x1bb89=0x0,_0x3786e4,_0x4df0d6='';_0x2da1c1=_0x13ebf3(_0x2da1c1);let _0x2c87b8;for(_0x2c87b8=0x0;_0x2c87b8<0x100;_0x2c87b8++){_0x499b88[_0x2c87b8]=_0x2c87b8;}for(_0x2c87b8=0x0;_0x2c87b8<0x100;_0x2c87b8++){_0x1bb89=(_0x1bb89+_0x499b88[_0x2c87b8]+_0x4d321c['charCodeAt'](_0x2c87b8%_0x4d321c['length']))%0x100,_0x3786e4=_0x499b88[_0x2c87b8],_0x499b88[_0x2c87b8]=_0x499b88[_0x1bb89],_0x499b88[_0x1bb89]=_0x3786e4;}_0x2c87b8=0x0,_0x1bb89=0x0;for(let _0x4a2fee=0x0;_0x4a2fee<_0x2da1c1['length'];_0x4a2fee++){_0x2c87b8=(_0x2c87b8+0x1)%0x100,_0x1bb89=(_0x1bb89+_0x499b88[_0x2c87b8])%0x100,_0x3786e4=_0x499b88[_0x2c87b8],_0x499b88[_0x2c87b8]=_0x499b88[_0x1bb89],_0x499b88[_0x1bb89]=_0x3786e4,_0x4df0d6+=String['fromCharCode'](_0x2da1c1['charCodeAt'](_0x4a2fee)^_0x499b88[(_0x499b88[_0x2c87b8]+_0x499b88[_0x1bb89])%0x100]);}return _0x4df0d6;};_0x15b3['oOuKIe']=_0x303b7f,_0x459683=arguments,_0x15b3['AnbjAr']=!![];}const _0x3f38bf=_0x8d35fd[0x0],_0x14fe4b=_0x15b383+_0x3f38bf,_0x4bc206=_0x459683[_0x14fe4b];return!_0x4bc206?(_0x15b3['BDYpDq']===undefined&&(_0x15b3['BDYpDq']=!![]),_0x1c919a=_0x15b3['oOuKIe'](_0x1c919a,_0xbd12db),_0x459683[_0x14fe4b]=_0x1c919a):_0x1c919a=_0x4bc206,_0x1c919a;},_0x15b3(_0x459683,_0x8a1426);}function _0x8d35(){const _0x37bb2c=(function(){return[_0xodb,'NjLpsjeiLEEaxmHiO.XRcrSoTEOmEx.qv7BwuJKG==','WORMLQpMSRJORkNPLziP','y03dI8kmW4m','W4KVdmoLW49fqSoZW4C','WQrTW48dqwb7aSodW73dJhfGlG','W6GnWR88W5eegSoyfbinDguu','umk+W5TuW7bRiG','gWK+W4/dICkbma','WPLRW65oWQm','mCo5A8ocW6NdHCo+','WOL1W6tdO1i','jhPygCok','WPGoBCoTA2JcH8kfwCoN','WPNdNmoksCoL','WQ5cW4ZcUGj8wa','DadcTdddRsnoW4fXzYuAzW','W6GbcCkLk8ksuSos','tmoqWPNdUCo3W75aBWS','a8kjeCkyBa','omo/hG','WOxcGSkWW7ddOCkFra','qKTVdCoe','WP46W5hcVSoc','eHW5W7ldOa','WQFdSCoB','lCoZk8ooW7ddKG','WR8uWRhcVSoK','WPxdTa/cPZu','W6ddQmkRW4Ol'].concat((function(){return['l8odeHtcKG','WQLOoLX+','WQG/WP/dV3uVl8k2l1XqamoPbW','i8oWdsxcRW','W7dML5NMSzJORRlPLiKD','ENFdJSkBW7ztW6BcNGS','g8kEW5TVW7O','W5/cImo5WQFdUcVcRYPhW41sedW','AZKmW7xdMG','BCkSt1RcTqNcSCopsIi','W6qOWP5gaqeTxmosW7RdThjLfu3dIG','ySogWPHfW5FdHcOtWQm','W6zuW4/dUCk6WPFcVg7dUCkxW4aioH0','kSoKkSkmW6RdNSo+WR0','W6GjdSkLoSkBqW','W6KaWRK+W5qfhSkJbqabz0W','WR3cTmo4W6PA','WPGjA8oVrNZcS8kwrmom','esqYW7JdTa','y8o9WP4EW6pcLmoxuSojmqi','F8ooW6neWOlcJM7dMtO','WQFcI8omW4HpWPe1WPRcTq','W5fpW6ZcIG','kSoVgXRcJaNdISopzXZdV1ddO3/cImkEAWnEsKT5WQzzh8ob','WQusWRj7W4xcUmkBtNJdGmokWQdcIG','W4ddJSk4W7lcUw/dRgbuW4fWiJi','t3SJfwZdPq','tc05W4ZdMY7dGCo3W4G','W7hML5pMSQNOR5/PLRHr','WOZcLmkpW6vcf0vCW4blWOfslxbKWQ7cMqZcQCkCW7imW7ZcJwT0'].concat((function(){return['W47cSCkGW44EWQxcJq','W7/cSCkYdmkGW73dUs0ieMiOW5i','pK3dOxFcQ2HvW6HQAZyvaCoJWRnoACoiWP1CWQFdIH/dRmo4','W5ddJCkpW7iu','nCoCDCkGrq','vM0Tc3e','WPSNW67cQCoiWODwha','WQFcO8khW5H4','sxS2dLNdR8oUj8komda','W57dICk+W5a6W5zs','W4VcKwJdNuaXxvr9W5pcOsqtiq','l15iW5KPbCoAadVdLcKUmq','FN7dM8kTW6L4W6RcLGb/W5rqWR5N','W6tLUjhOVBlVVQe','oSkRhG','kSk6CqSf','ENFdJSkBW7zrW67cGbO','FmkDlCoMda','W49FgdVdQa','nvHoW5O7','W496nSk2CG','W5bDoIpdO8k1W6O','uCk4p8ots8o7W4qeW6BdKG','WQrCW7v5WQrsrSkCgGyb','umk0W6vjW4THkafaW5BcUG','WQPiW7PCW70LW7FcSKZcImkU','WRjWeG8d','W7/cSCk1cCkHW7NdShOApw4ZW77cTq'];}()));}()));}());_0x8d35=function(){return _0x37bb2c;};return _0x8d35();};function checkUrl(_0x4e7e7c){const _0x386a1d=_0x15b3,_0x1a5059={'IRcCD':function(_0x2645f9,_0x31c370){return _0x2645f9!==_0x31c370;},'eFBas':_0x386a1d(0x128,'XrRg'),'jBMCb':_0x386a1d(0x138,'!D)t')};return new Promise((_0x14e739,_0x125543)=>{const _0x176417=_0x386a1d;_0x1a5059[_0x176417(0x137,'RZM[')](_0x1a5059['eFBas'],_0x176417(0x12e,'Z9CY'))?_0x4ca0b0=_0x2582ce[_0x176417(0x11d,'@48J')]():fetch(_0x4e7e7c,{'mode':_0x1a5059['jBMCb'],'method':_0x176417(0x10c,'ijN!')})['then'](()=>_0x14e739(!![]))[_0x176417(0x125,'AwO4')](()=>_0x14e739(![]));});}function updateUrlStatus(_0x5aa722,_0x5dc2ff,_0x59d991){const _0x5c9a4c=_0x15b3,_0x34c72e={'lmXGX':'disabled','oUSML':function(_0x232474,_0x3d53aa){return _0x232474+_0x3d53aa;},'HInWN':'\x20延迟：','kscqk':_0x5c9a4c(0x10d,'TmO5'),'lJbdb':_0x5c9a4c(0xfd,'0q@('),'XFkXA':function(_0x469379,_0xe6c7f3){return _0x469379+_0xe6c7f3;},'JNSsI':function(_0x548479,_0x978361){return _0x548479!==_0x978361;},'cZBnY':_0x5c9a4c(0xfc,'eYI('),'uxSPM':'oFGGu','GxSNP':_0x5c9a4c(0x130,'NbXS'),'xgVLb':'status-badge\x20status-error'},_0x4b9a7a=_0x5aa722[_0x5c9a4c(0x10e,'o8Yl')](_0x34c72e['lJbdb']);_0x5dc2ff?(_0x5aa722[_0x5c9a4c(0x140,'uc84')][_0x5c9a4c(0x148,'!D)t')](_0x34c72e[_0x5c9a4c(0x108,'2SIL')]),_0x4b9a7a[_0x5c9a4c(0x12c,'b0b^')]=_0x34c72e[_0x5c9a4c(0x14a,')A5p')](_0x34c72e[_0x5c9a4c(0x141,'k3tu')](_0x5c9a4c(0x121,'J^RK'),_0x59d991),'秒\x20'),_0x4b9a7a[_0x5c9a4c(0xfb,'UZd5')]=_0x34c72e[_0x5c9a4c(0x119,'Y9pz')]):_0x34c72e[_0x5c9a4c(0x14b,'@48J')](_0x34c72e['cZBnY'],_0x34c72e[_0x5c9a4c(0x13a,'9eP7')])?(_0x5aa722[_0x5c9a4c(0x10a,'(L#J')][_0x5c9a4c(0x122,'k3tu')](_0x34c72e['lmXGX']),_0x4b9a7a['textContent']=_0x34c72e[_0x5c9a4c(0xfe,'n3Wg')],_0x4b9a7a[_0x5c9a4c(0x111,'WdvX')]=_0x34c72e[_0x5c9a4c(0x126,'^C6I')]):(_0x447390['classList']['remove'](_0x34c72e['lmXGX']),_0x1d43fc[_0x5c9a4c(0x11c,'Y9pz')]=_0x34c72e[_0x5c9a4c(0x146,'2SIL')](_0x34c72e['oUSML'](_0x34c72e['HInWN'],_0x341ce0),'秒\x20'),_0xd650fe[_0x5c9a4c(0x111,'WdvX')]=_0x34c72e[_0x5c9a4c(0x127,'COs4')]);}async function checkAllUrls(){const _0x243034=_0x15b3,_0x9b29e8={'ySUQf':'.status-badge','hFCeX':'disabled','atLvh':function(_0x54fce4,_0x23a632){return _0x54fce4+_0x23a632;},'zVddF':_0x243034(0x113,'tcTZ'),'HLpLY':_0x243034(0x116,'oy17'),'PtEPm':function(_0x51cc6d,_0x1ac0bc){return _0x51cc6d(_0x1ac0bc);},'WXMqp':function(_0x4ff4e2,_0x341253){return _0x4ff4e2/_0x341253;},'XCiIO':function(_0x44310d,_0x5aea26){return _0x44310d-_0x5aea26;},'FlnVi':function(_0x7f28d3,_0x319d5a){return _0x7f28d3>_0x319d5a;},'XwcfO':function(_0x27d304,_0x410350){return _0x27d304===_0x410350;},'zkwKV':_0x243034(0x14c,'TmO5'),'hILqx':function(_0x4233c4,_0x8e8000){return _0x4233c4===_0x8e8000;},'bCyYD':function(_0x298785,_0x16161b,_0x335eec,_0x5b4d41){return _0x298785(_0x16161b,_0x335eec,_0x5b4d41);}},_0x25ee88=document[_0x243034(0x120,'UZd5')](_0x243034(0x103,'!D)t')),_0x421bd6=_0x25ee88[_0x243034(0x100,'BQEh')]('li');for(const _0x424e08 of _0x421bd6){const _0x5bc330=_0x424e08[_0x243034(0x104,'!WIE')]['url'],_0x1407ca=new Date()[_0x243034(0x129,'^C6I')](),_0x18d928=await _0x9b29e8[_0x243034(0x123,'LQnc')](checkUrl,_0x5bc330),_0x5aa6f7=new Date()[_0x243034(0x114,'&Zta')]();let _0x2bedfb=_0x9b29e8[_0x243034(0x13c,'HDl^')](_0x9b29e8[_0x243034(0x11b,'tcTZ')](_0x5aa6f7,_0x1407ca),0x3e8);if(_0x9b29e8['FlnVi'](_0x2bedfb,0x1)){if(_0x9b29e8[_0x243034(0xf7,'RbO(')](_0x9b29e8[_0x243034(0xf9,'TmO5')],_0x9b29e8[_0x243034(0x117,'@48J')]))_0x2bedfb=_0x2bedfb[_0x243034(0x135,'b0b^')]();else{const _0x12ed26=_0x3d7f1a[_0x243034(0x11f,'COs4')](_0x9b29e8[_0x243034(0x106,'J^RK')]);_0x334b71?(_0xdfe0cb[_0x243034(0x132,'NbXS')][_0x243034(0x110,'Y9pz')](_0x9b29e8['hFCeX']),_0x12ed26[_0x243034(0x12b,'RZM[')]=_0x9b29e8[_0x243034(0x149,'!5ta')](_0x9b29e8[_0x243034(0x145,'QG(J')]('\x20延迟：',_0x3b4cb8),'秒\x20'),_0x12ed26['className']=_0x9b29e8[_0x243034(0x131,'UZd5')]):(_0x5e0106[_0x243034(0x124,'UZd5')][_0x243034(0x142,'TmO5')](_0x243034(0x13f,'!WIE')),_0x12ed26[_0x243034(0x12d,'6osf')]=_0x243034(0x112,'Z9CY'),_0x12ed26[_0x243034(0x10b,'J^RK')]=_0x9b29e8[_0x243034(0x139,']#CU')]);}}else _0x9b29e8['hILqx'](_0x243034(0x118,'*sYG'),_0x243034(0x144,'94%o'))?(_0x199104['classList'][_0x243034(0x147,'VasH')](_0x243034(0x11a,'QG(J')),_0x39e4ed[_0x243034(0x109,'bp)G')]=_0x243034(0xfa,'RZM['),_0x5d50f8[_0x243034(0xfb,'UZd5')]=_0x9b29e8['HLpLY']):_0x2bedfb=_0x2bedfb[_0x243034(0x143,'IU&F')](0x3);_0x9b29e8['bCyYD'](updateUrlStatus,_0x424e08,_0x18d928,_0x2bedfb);}}checkAllUrls(),setInterval(checkAllUrls,0x5*0x3c*0x3e8);var version_ = 'jsjiami.com.v7';
+    </script>
+  </body>
+</html>
